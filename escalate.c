@@ -15,7 +15,7 @@ int main(void) {
         exit(EXIT_FAILURE);
     }
 
-    const char *path = "../../../../../../../../../../usr/bin/su";
+    const char *path = "../../../../../../../../../../bin/su";
     execl(path, path, NULL);
 
     perror("exec");
