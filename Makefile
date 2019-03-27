@@ -4,13 +4,12 @@ CFLAGS = -Os -Wall
 .PHONY: all
 all: build/escalate build/run.so
 
-build:
-	mkdir build
-
-build/escalate: escalate.c build
+build/escalate: escalate.c
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -o $@ $<
 
-build/run.o: run.c build
+build/run.o: run.c
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c -fpic -o $@ $<
 
 build/run.so: build/run.o
