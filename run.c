@@ -17,7 +17,7 @@ static void run(void) {
     if (setuid(geteuid()) != 0)
         perror("setuid");
 
-    if (chroot("../../../../../../../../../..") != 0)
+    if (chroot(".") != 0)
         perror("chroot");
 
     execlp(cmd, cmd, NULL);
