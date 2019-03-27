@@ -16,9 +16,9 @@ sudo setcap CAP_SYS_CHROOT=ep build/escalate
 ```
 prepare the chroot
 ```
-./prepare-chroot.sh
+./prepare-chroot.sh chroot/ $(which su)
 ```
 and run the binary
 ```
-./build/escalate
+./build/escalate chroot/ $(which su)
 ```
